@@ -1,0 +1,21 @@
+nim = input("NIM        : ")
+            nim = validasi.validasi_nim(nim)
+            
+            nama = input("Nama       : ")
+            nama = validasi.validasi_nama(nama)
+            
+            nilai_tugas = input("Nilai Tugas: ")
+            nilai_tugas = validasi.validasi_nilai(nilai_tugas, "Tugas")
+            
+            nilai_uts = input("Nilai UTS  : ")
+            nilai_uts = validasi.validasi_nilai(nilai_uts, "UTS")
+            
+            nilai_uas = input("Nilai UAS  : ")
+            nilai_uas = validasi.validasi_nilai(nilai_uas, "UAS")
+            
+            # Buat objek mahasiswa
+            mhs = Mahasiswa(nim, nama, nilai_tugas, nilai_uts, nilai_uas)
+            
+            # Proses nilai
+            proses.hitung_nilai_akhir(mhs)
+            mhs.grade = proses.tentukan_grade(mhs.nilai_akhir)
