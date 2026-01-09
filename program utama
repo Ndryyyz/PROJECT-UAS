@@ -1,0 +1,14 @@
+def main():
+    daftar_mahasiswa = []
+    proses = ProsesNilai()
+    tampilan = TampilanNilai()
+    validasi = Validasi()
+    
+    print("="*90)
+    print(" PROGRAM SISTEM PENILAIAN MAHASISWA ".center(90))
+    print("="*90)
+    
+    while True:
+        print("\n--- Input Data Mahasiswa ---")
+        
+        try:
