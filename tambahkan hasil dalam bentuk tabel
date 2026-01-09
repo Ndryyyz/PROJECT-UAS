@@ -1,0 +1,9 @@
+if daftar_mahasiswa:
+        print("\n\n" + " HASIL PENILAIAN ".center(90, "="))
+        tampilan.tampilkan_header()
+        for mhs in daftar_mahasiswa:
+            tampilan.tampilkan_mahasiswa(mhs)
+        tampilan.tampilkan_footer()
+        print(f"\nTotal Mahasiswa: {len(daftar_mahasiswa)}")
+    else:
+        print("\nTidak ada data mahasiswa.")
