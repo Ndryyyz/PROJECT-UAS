@@ -1,0 +1,29 @@
+class Validasi:
+    """Class untuk validasi input (menggunakan konsep exception)"""
+    
+    @staticmethod
+    def validasi_nim(nim):
+        """Validasi NIM (harus angka dan panjang tertentu)"""
+        if not nim.isdigit():
+            raise ValueError("NIM harus berupa angka!")
+        if len(nim) < 5:
+            raise ValueError("NIM minimal 5 digit!")
+        return nim
+    
+    @staticmethod
+    def validasi_nama(nama):
+        """Validasi nama (tidak boleh kosong)"""
+        if not nama.strip():
+            raise ValueError("Nama tidak boleh kosong!")
+        return nama.strip()
+    
+    @staticmethod
+    def validasi_nilai(nilai, jenis):
+        """Validasi nilai (harus angka 0-100)"""
+        try:
+            nilai_float = float(nilai)
+            if nilai_float < 0 or nilai_float > 100:
+                raise ValueError(f"Nilai {jenis} harus antara 0-100!")
+            return nilai_float
+        except ValueError:
+            raise ValueError(f"Nilai {jenis} harus berupa angka!")
